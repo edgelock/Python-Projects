@@ -34,9 +34,9 @@ driver.get ('https://discord.com/channels/@me')
 #Selects the field for username & password and enters strings
 sleep(3)
 #Need to enter your own ID/PW for server in the 2 below ".send_keys" fields.
-driver.find_element_by_xpath ('//*[@id="app-mount"]/div[2]/div/div[2]/div/div/form/div/div/div[1]/div[3]/div[1]/div/div[2]/input').send_keys('jhante.charles@gmail.com')
+driver.find_element_by_xpath ('//*[@id="app-mount"]/div[2]/div/div[2]/div/div/form/div/div/div[1]/div[3]/div[1]/div/div[2]/input').send_keys('')
 sleep(3)
-driver.find_element_by_xpath ('//*[@id="app-mount"]/div[2]/div/div[2]/div/div/form/div/div/div[1]/div[3]/div[2]/div/input').send_keys('Pc!C0mpl!@nc3')
+driver.find_element_by_xpath ('//*[@id="app-mount"]/div[2]/div/div[2]/div/div/form/div/div/div[1]/div[3]/div[2]/div/input').send_keys('')
 sleep(3)
 #Clicks the login button to enter said items
 driver.find_element_by_xpath('//*[@id="app-mount"]/div[2]/div/div[2]/div/div/form/div/div/div[1]/div[3]/button[2]/div').click()
@@ -90,3 +90,10 @@ sleep(4)
 # # sleep(2)
 # #driver.find_element_by_xpath ('/html/body/div/div[4]/div[2]/div/form/div/div/div[2]/div[2]/div/input').send_keys( channelname + ' has been created.')
 # #sleep(3)
+
+
+
+
+
+
+
