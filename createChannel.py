@@ -1,4 +1,3 @@
-
 #You must have Chocolatey installed here for this to work
 #You must have Selenium Installed for this to work
 #Pip command to install: pip install -U selenium
@@ -9,10 +8,13 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
 from random import randrange
 import base64
+from getpass import getpass
 
 #Get server name from user
 #Removing the user input part for testing purposes.
-channelname = input("Enter Channel Name\n")
+email = input("Enter your email:\n")
+password = getpass('Password:')
+channelName = input("What would you like to name the channel?:\n")
 
 #These line are to automate me typing in a string for a test
 #Test Variables
@@ -33,10 +35,10 @@ driver.maximize_window()
 driver.get ('https://discord.com/channels/@me')
 #Selects the field for username & password and enters strings
 sleep(3)
-#Need to enter your own ID/PW for server in the 2 below ".send_keys" fields.
-driver.find_element_by_xpath ('//*[@id="app-mount"]/div[2]/div/div[2]/div/div/form/div/div/div[1]/div[3]/div[1]/div/div[2]/input').send_keys('')
+##Add a loop to require ID/PW again if it's not correct the first time it's entered. 
+driver.find_element_by_xpath ('//*[@id="app-mount"]/div[2]/div/div[2]/div/div/form/div/div/div[1]/div[3]/div[1]/div/div[2]/input').send_keys(email)
 sleep(3)
-driver.find_element_by_xpath ('//*[@id="app-mount"]/div[2]/div/div[2]/div/div/form/div/div/div[1]/div[3]/div[2]/div/input').send_keys('')
+driver.find_element_by_xpath ('//*[@id="app-mount"]/div[2]/div/div[2]/div/div/form/div/div/div[1]/div[3]/div[2]/div/input').send_keys(password)
 sleep(3)
 #Clicks the login button to enter said items
 driver.find_element_by_xpath('//*[@id="app-mount"]/div[2]/div/div[2]/div/div/form/div/div/div[1]/div[3]/button[2]/div').click()
@@ -45,7 +47,6 @@ sleep(7)
 #Selecting the server search field
 driver.find_element_by_xpath('//*[@id="app-mount"]/div[2]/div/div[2]/div/div/div/div[2]/div[1]/nav/div[1]/button').click()
 sleep(2)
-
 
 #Input Server name in field
 driver.find_element_by_xpath ('//*[@id="app-mount"]/div[4]/div[2]/div/div/div/input').send_keys('CSC')
@@ -74,7 +75,7 @@ sleep(2)
 # elif channeltype ==2:
 #     driver.find_element_by_xpath('').click()
 
-driver.find_element_by_xpath ('/html/body/div/div[4]/div[2]/div/form/div/div/div[2]/div[2]/div/input').send_keys(channelname)
+driver.find_element_by_xpath ('/html/body/div/div[4]/div[2]/div/form/div/div/div[2]/div[2]/div/input').send_keys(channelName)
 sleep(3)
 driver.find_element_by_xpath('/html/body/div/div[4]/div[2]/div/form/div/div/div[3]/button[1]/div').click()
 sleep(4)
