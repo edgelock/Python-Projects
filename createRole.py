@@ -1,6 +1,6 @@
 #You must have Chocolatey installed here for this to work
 #You must have Selenium Installed for this to work
-#Pip command to install: pip install -U selenium
+##Pip command to install: pip install -U selenium
 
 from selenium import webdriver
 from selenium.webdriver import ActionChains
@@ -34,9 +34,9 @@ driver = webdriver.Chrome()
 #Create action chain object for double clicking
 action = ActionChains(driver)
 
+#Maximize the window
 sleep(2)
 driver.maximize_window()
-
 
 #Heads over to the site you want to log into.
 driver.get ('https://discord.com/channels/@me')
@@ -100,19 +100,16 @@ sleep(3)
 
 #Hit "Save Changes" after role name is entered
 driver.find_element_by_xpath('/html/body/div/div[2]/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div[2]/button[2]/div').click()
-sleep(2)
-
-
+sleep(3)
 
 ###SECOND HALF OF THE SCRIPT
-##You CTRL+/ only ONE TIME
 
-#Find out how to run this in the same window, possibly same tab.
-
-
-
+#Since you entered Email/PW in the first 1/2 you don't have to prompt for it in this 1/2.
 # #Head over to https://dyno.gg/account
-# driver.get ('https://dyno.gg/account')
+driver.get('https://dyno.gg/account')
+sleep(3)
+
+#You CTRL + / ONE time HERE.
 
 # #Log In Steps
 # #Selects the field for username & password and enters strings
@@ -124,33 +121,33 @@ sleep(2)
 # sleep(3)
 # #Clicks the login button to enter said items
 # driver.find_element_by_xpath('//*[@id="app-mount"]/div[2]/div/div[2]/div/div/form/div/div/div[1]/div[3]/button[2]/div').click()
-# sleep(3)
+# sleep(3) 
 
-# #Select CSC General
-# driver.find_element_by_xpath('/html/body/div/div/div[2]/div/div/div/div[2]/div/div[2]/div/div/div[2]/a').click()
-# sleep(3)
+#Select CSC General
+driver.find_element_by_xpath('//*[@id="react-tabs-1"]/div/div[2]/div/div/div[2]/a').click()
+sleep(3)
 
-# #Select Modules
-# driver.find_element_by_xpath('/html/body/div/div[1]/div/div/div/div[1]/aside/div[3]/ul/li[3]/a').click()
-# sleep(3)
+#Select Modules
+driver.find_element_by_xpath('/html/body/div/div[1]/div/div/div/div[1]/aside/div[3]/ul/li[3]/a').click()
+sleep(3)
 
-# #Select Autorole Settings
-# driver.find_element_by_xpath('/html/body/div/div[1]/div/div/div/div[2]/div[2]/div/div/div/div[8]/div/a[1]').click()
-# sleep(3)
+#Select Autorole Settings
+driver.find_element_by_xpath('/html/body/div/div[1]/div/div/div/div[2]/div[2]/div/div/div/div[8]/div/a[1]').click()
+sleep(3)
 
-# #Select Joinable Ranks
-# driver.find_element_by_xpath('/html/body/div/div[1]/div/div/div/div[2]/div[2]/div[1]/div/ul/li[2]/a').click()
-# sleep(3)
+#Select Joinable Ranks
+driver.find_element_by_xpath('/html/body/div/div[1]/div/div/div/div[2]/div[2]/div[1]/div/ul/li[2]/a').click()
+sleep(3)
 
-# #Select Role Dropdown
-# driver.find_element_by_xpath('/html/body/div/div[1]/div/div/div/div[2]/div[2]/div[2]/div[1]/div[1]/div/p/span/select').click()
-# sleep(3)
+#Select Role Dropdown
+driver.find_element_by_xpath('/html/body/div/div[1]/div/div/div/div[2]/div[2]/div[2]/div[1]/div[1]/div/p/span/select').click()
+sleep(3)
 
-# #Select Role From Dropdown
-# select = Select(driver.find_element_by_class_name('module-setting-dropdown'))
-# select.select_by_visible_text(newRole) 
-# sleep(2)
+#Select Role From Dropdown
+select = Select(driver.find_element_by_class_name('module-setting-dropdown'))
+select.select_by_visible_text(newRole) 
+sleep(2)
 
-# #Click 'Add to add the role'
-# driver.find_element_by_xpath('//*[@id="autoroles-settings"]/div[1]/div[1]/div/p/input').click()
-# sleep(3)
+#Click 'Add to add the role'
+driver.find_element_by_xpath('//*[@id="autoroles-settings"]/div[1]/div[1]/div/p/input').click()
+sleep(3)
