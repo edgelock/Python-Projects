@@ -1,3 +1,4 @@
+#This import is used for automation of keyboard/mouse inputs.
 import pyautogui
 
 #Sets the password (or answer) to the gui prompt
