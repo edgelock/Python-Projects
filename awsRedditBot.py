@@ -27,13 +27,16 @@ for submission in reddit.subreddit("AWSCertifications").hot(limit=10):
     print(submission.score)
     print(submission.url)
     print(submission.id)
-#Prints out comments in subreddit(s) of your choosing. 
-for comment in reddit.subreddit("AWSCertifications").comments():
-    print(comment.body)
-    #Defining a "trigger phrase" to look for in the body of comments
-    trigger_phrase = "SAP"
-    #For all the comments in the subreddit(s) if the trigger phrase is met, print them out
-    for comment in reddit.subreddit("AWSCertificatons").stream.comments():
-        if trigger_phrase in comment.body.lower():
-            print(comment.body)
+
+
+# #Prints out comments in subreddit(s) of your choosing. 
+# for comment in reddit.subreddit("AWSCertifications").comments():
+#     print(comment.body)
+#     #Defining a "trigger phrase" to look for in the body of comments
+#     trigger_phrase = "SAP"
+#     #For all the comments in the subreddit(s) if the trigger phrase is met, print them out
+#     for comment in reddit.subreddit("AWSCertificatons").stream.comments():
+#         if trigger_phrase in comment.body.lower():
+#             print(comment.body)
+
  
