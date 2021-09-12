@@ -1,4 +1,5 @@
 import praw
+import time #Imports the time inport so you can space out your iteraction with reddit
 from prawcore.exceptions import ResponseException
 
 #Reddit bot is connected & connected to said account.
