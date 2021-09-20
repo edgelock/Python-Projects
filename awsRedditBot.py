@@ -18,15 +18,16 @@ try:
 except ResponseException:
     print("Something went wrong during authentication")
 
-subreddit = reddit.subreddit("redditdev")
-print(subreddit.title)
+#Defining a "trigger phrase" to look for in the stream of submission titles (or wherever you may want to look)
+trigger_phrase = "SAP-C01"
+trigger_phrase2 = "GCP PCA"
+#TODO Add a phrase for KCA
+#trigger_phrase3 = ""
 
-#Prints the top 10 hot submissions in the learnpython subreddit along with their rank, score, URL and ID.
-for submission in reddit.subreddit("AWSCertifications").hot(limit=10):
+#For all the submission in the subreddit(s) if the trigger phrase is in said submission.title, print it out.
+for submission in reddit.subreddit("AWSCertifications").stream.submissions():
+  if trigger_phrase in submission.title:
     print(submission.title)
-    print(submission.score)
-    print(submission.url)
-    print(submission.id)
 
 
 # #Prints out comments in subreddit(s) of your choosing. 
