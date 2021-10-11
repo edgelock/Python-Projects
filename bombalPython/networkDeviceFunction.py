@@ -3,7 +3,7 @@ import string
 from tabulate import tabulate
 
 
-def create_devices(num_devices=1, num_subnets=1):
+def create_devices(num_devices, num_subnets):
 
     #Empty list to hold the devices
     created_devices = list () 
@@ -42,8 +42,7 @@ def create_devices(num_devices=1, num_subnets=1):
 
     return created_devices
 
-
-if __name__ == '__main__':
+if __name__== '__main__': #TODO
 
     devices = create_devices(num_devices=4, num_subnets=4)
     print("\n", tabulate(devices, headers="keys"))
