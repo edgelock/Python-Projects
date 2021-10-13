@@ -39,6 +39,3 @@ for count, submission in enumerate(reddit.subreddit("Azure").hot(limit=10)):
 #   title = submission.title
 #   if keyword in title:
 #     print(title)
-
-
- 
