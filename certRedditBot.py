@@ -19,12 +19,6 @@ try:
 except ResponseException:
     print("Something went wrong during authentication")
 
-#Defining a "trigger phrase" to look for in the stream of submission titles (or wherever you may want to look)
-trigger_phrase = "SAP-C01"
-trigger_phrase2 = "GCP PCA"
-#TODO Add a phrase for KCA
-#trigger_phrase3 = ""
-
 #For all the submission in the subreddit(s) if the trigger phrase is in said submission.title, print it out.
 print("AWSCertifications Top 10:")
 for count, submission in enumerate(reddit.subreddit("AWSCertifications").hot(limit=10)):
@@ -37,6 +31,14 @@ print("\n")
 print("Azure Top 10:\n")
 for count, submission in enumerate(reddit.subreddit("Azure").hot(limit=10)):
     print(count, submission.title)
+
+#________________THIS WORKS________________
+#This is for priting out the titles in a particular subreddit with the matching keyword in the title
+# keyword = "SAP-C01"
+# for count, submission in enumerate(reddit.subreddit("AWSCertifications").new(limit=100)):
+#   title = submission.title
+#   if keyword in title:
+#     print(title)
 
 
  
